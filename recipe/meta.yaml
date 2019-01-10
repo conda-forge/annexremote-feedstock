@@ -15,12 +15,11 @@ build:
   noarch: python
 
 requirements:
-  build:
-    - nose
   host:
     - pip
     - six
     - python
+    - nose
   run:
     - six
     - python
