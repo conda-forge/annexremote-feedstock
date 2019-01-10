@@ -15,5 +15,5 @@ pushd $REPO_DIR
 git init
 git annex init
 git annex initremote directory_remote type=external externaltype=directory encryption=none directory=$REMOTE_DIR
-git annex testremote directory_remote
+git annex testremote --verbose --debug directory_remote
 popd
