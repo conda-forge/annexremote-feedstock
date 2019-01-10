@@ -11,24 +11,21 @@ source:
 
 build:
   noarch: python
-  number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  number: 1
 
 requirements:
   host:
     - pip
     - python >=3
+    - nose
   run:
     - python >=3
 
 test:
   requires:
     - nose
-  commands:
-    - nosetests -v
-    - python -c "from annexremote import Master, SpecialRemote, RemoteError"
-  imports:
-    - annexremote
+    - git-annex
+    - gnupg
 
 about:
   home: https://github.com/Lykos153/AnnexRemote
