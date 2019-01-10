@@ -12,14 +12,15 @@ source:
 
 build:
   number: 0
+  noarch: python
 
 requirements:
+  build:
+    - nose
   host:
     - pip
     - six
     - python
-  build:
-    - nose
   run:
     - six
     - python
