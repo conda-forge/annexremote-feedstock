@@ -1,5 +1,6 @@
 {% set name = "AnnexRemote" %}
-{% set version = "v1.2.1_alpha.1" %}
+{% set version = "v1.2.1_alpha.2" %}
+{% set sha256 = "8a42e193196b5e96cfe1bcbd284b4713f3010127e89f9a66b53512c89f71e04c" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +8,7 @@ package:
 
 source:
   url: https://github.com/notestaff/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 596d24cf7ea6ace7e3719e9e31726e8d726512101a4d0aec58324090a51dad2e
+  sha256: {{ sha256 }}
 
 build:
   noarch: python
