@@ -1,13 +1,13 @@
-{% set name = "annexremote" %}
-{% set version = "1.2.1" %}
+{% set name = "AnnexRemote" %}
+{% set version = "v1.2.1_alpha.1" %}
 
 package:
   name: "{{ name|lower }}"
   version: "{{ version }}"
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2db60f428999fe2ad9a18c03feb94829ec88144279cb5630b77d62138cff3511
+  url: https://github.com/notestaff/{{ name }}/archive/{{ version }}.tar.gz
+  sha256: 596d24cf7ea6ace7e3719e9e31726e8d726512101a4d0aec58324090a51dad2e
 
 build:
   noarch: python
@@ -17,9 +17,11 @@ build:
 requirements:
   host:
     - pip
-    - python >=3
+    - six
+    - python
   run:
-    - python >=3
+    - six
+    - python
 
 test:
   requires:
