@@ -1,6 +1,6 @@
 {% set name = "AnnexRemote" %}
-{% set version = "v1.2.1a3" %}
-{% set sha256 = "131aa71e84df0ab08f05f15ee8eac27cf3d3fc914a5ef78553173d61eca42c9d" %}
+{% set version = "v1.2.1a4" %}
+{% set sha256 = "b2084a9ea0aac0ded662a520c67ffd5916800ac0c6c972a5e788a1fbe9b21dec" %}
 
 package:
   name: "{{ name|lower }}"
@@ -18,6 +18,8 @@ requirements:
     - pip
     - six
     - python
+  build:
+    - nose
   run:
     - six
     - python
