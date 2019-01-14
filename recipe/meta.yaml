@@ -1,34 +1,35 @@
-{% set name = "annexremote" %}
-{% set version = "1.2.1" %}
+{% set name = "AnnexRemote" %}
+{% set version = "1.2.1a6" %}
 
 package:
   name: "{{ name|lower }}"
   version: "{{ version }}"
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2db60f428999fe2ad9a18c03feb94829ec88144279cb5630b77d62138cff3511
+  url: https://github.com/notestaff/{{ name }}/archive/v{{ version }}.tar.gz
+  sha256: 608c341a1a343b35603526de557fc533dc1a85ef1dde86808fa4c9161ade5e56
 
 build:
-  noarch: python
+  skip: True  # [not linux]
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
 
 requirements:
   host:
     - pip
-    - python >=3
+    - python
+    - future
+    - nose
+    - mock
   run:
-    - python >=3
+    - python
+    - future
 
 test:
   requires:
     - nose
-  commands:
-    - nosetests -v
-    - python -c "from annexremote import Master, SpecialRemote, RemoteError"
-  imports:
-    - annexremote
+    - mock
+    - git-annex
+    - gnupg
 
 about:
   home: https://github.com/Lykos153/AnnexRemote
