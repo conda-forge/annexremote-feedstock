@@ -28,8 +28,6 @@ test:
   requires:
     - nose
     - mock
-    - six
-    - coverage
     - git-annex
     - gnupg
 
