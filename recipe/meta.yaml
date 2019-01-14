@@ -20,6 +20,7 @@ requirements:
     - future
     - nose
     - mock
+    - six
   run:
     - python
     - future
@@ -27,6 +28,9 @@ requirements:
 test:
   requires:
     - nose
+    - mock
+    - six
+    - coverage
     - git-annex
     - gnupg
 
