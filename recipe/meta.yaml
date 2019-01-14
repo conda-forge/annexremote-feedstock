@@ -6,7 +6,7 @@ package:
   version: "{{ version }}"
 
 source:
-  url: https://github.com/notestaff/{{ name }}/archive/{{ version }}.tar.gz
+  url: https://github.com/notestaff/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: 94652c96e43097f974acdcbe2c2146224d1da05bd8ba34fea16b9a2f0f39e0fe
 
 build:
