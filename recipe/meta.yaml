@@ -10,7 +10,7 @@ source:
   sha256: 608c341a1a343b35603526de557fc533dc1a85ef1dde86808fa4c9161ade5e56
 
 build:
-  skip: True  # [not linux]
+  skip: True  # [not unix]
   number: 1000
 
 requirements:
@@ -28,8 +28,8 @@ test:
   requires:
     - nose
     - mock
-    - git-annex
-    - gnupg
+    - git-annex  # [linux]
+    - gnupg  # [linux]
 
 about:
   home: https://github.com/Lykos153/AnnexRemote
