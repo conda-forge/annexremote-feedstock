@@ -1,5 +1,5 @@
 {% set name = "AnnexRemote" %}
-{% set version = "1.2.1a6" %}
+{% set version = "1.3.1a1" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/notestaff/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 608c341a1a343b35603526de557fc533dc1a85ef1dde86808fa4c9161ade5e56
+  sha256: c56a56bea994a44497851b964af81ab1510d33c401c0a344a0f37b6a8e1fb857
 
 build:
   skip: True  # [not linux]
