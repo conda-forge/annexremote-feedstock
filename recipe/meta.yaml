@@ -1,13 +1,13 @@
 {% set name = "AnnexRemote" %}
-{% set version = "1.3.0" %}
-{% set sha256 = "2c192c51e3805883cb37b531669863ab0391d491114bcc66ca73e09cf74e3cd6" %}
+{% set version = "1.3.1a1" %}
+{% set sha256 = "c56a56bea994a44497851b964af81ab1510d33c401c0a344a0f37b6a8e1fb857" %}
 
 package:
   name: "{{ name|lower }}"
   version: "{{ version }}"
 
 source:
-  url: https://github.com/Lykos153/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
+  url: https://github.com/notestaff/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
@@ -19,13 +19,14 @@ requirements:
     - pip
     - python
     - future
-    - nose
-    - mock
   run:
     - python
     - future
 
 test:
+  source_files:
+    - tests/
+    - examples/
   requires:
     - nose
     - mock
