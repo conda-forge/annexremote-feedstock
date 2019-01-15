@@ -6,11 +6,12 @@ nosetests --verbose
 python -c "from annexremote import Master, SpecialRemote, RemoteError"
 
 chmod u+x examples/git-annex-remote-directory
-export PATH=./examples:$PATH
+
+CURDIR=$(pwd)
+export PATH=$(CURDIR)/examples:$PATH
 
 git-annex-remote-directory < /dev/null | grep VERSION
 
-CURDIR=$(pwd)
 REMOTE_DIR=$CURDIR/remote
 REPO_DIR=$CURDIR/repo
 mkdir -p $REMOTE_DIR
