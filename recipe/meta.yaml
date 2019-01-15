@@ -19,13 +19,14 @@ requirements:
     - pip
     - python
     - future
-    - nose
-    - mock
   run:
     - python
     - future
 
 test:
+  source_files:
+    - tests/
+    - examples/
   requires:
     - nose
     - mock

@@ -4,6 +4,10 @@ set -eu -o pipefail -x
 
 nosetests --verbose
 python -c "from annexremote import Master, SpecialRemote, RemoteError"
+
+chmod u+x examples/git-annex-remote-directory
+export PATH=./examples:$PATH
+
 git-annex-remote-directory < /dev/null | grep VERSION
 
 CURDIR=$(pwd)
