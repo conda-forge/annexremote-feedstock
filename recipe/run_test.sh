@@ -8,7 +8,7 @@ python -c "from annexremote import Master, SpecialRemote, RemoteError"
 chmod u+x examples/git-annex-remote-directory
 
 CURDIR=$(pwd)
-export PATH=$(CURDIR)/examples:$PATH
+export PATH=$CURDIR/examples:$PATH
 
 git-annex-remote-directory < /dev/null | grep VERSION
 
