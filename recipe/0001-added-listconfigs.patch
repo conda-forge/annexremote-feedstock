@@ -1,0 +1,26 @@
+From f209f9a6da39b45c9b17790705d26e8b0ea8ba14 Mon Sep 17 00:00:00 2001
+From: Ilya Shlyakhter <ilya_shl@alum.mit.edu>
+Date: Thu, 4 Jun 2020 21:44:04 -0400
+Subject: [PATCH] added listconfigs
+
+---
+ examples/git-annex-remote-directory | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/examples/git-annex-remote-directory b/examples/git-annex-remote-directory
+index 123fb83..f1ce646 100755
+--- a/examples/git-annex-remote-directory
++++ b/examples/git-annex-remote-directory
+@@ -22,6 +22,9 @@ class DirectoryRemote(ExportRemote):
+         if not self.directory:
+             raise RemoteError("You need to set directory=")
+         self._mkdir(self.directory)
++
++    def listconfigs(self):
++        return {'directory': 'directory where data is stored'}
+                 
+     def prepare(self):
+         self.directory = self.annex.getconfig('directory')
+-- 
+2.23.3
+

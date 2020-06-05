@@ -21,6 +21,6 @@ git init
 git config user.email "someuser@gmail.com"
 git config user.name "Some User"
 git annex init
-git annex initremote directory_remote type=external externaltype=directory encryption=none directory=$REMOTE_DIR
-git annex testremote directory_remote
+git annex initremote --verbose --debug directory_remote type=external externaltype=directory encryption=none directory=$REMOTE_DIR
+git annex testremote --verbose --debug directory_remote
 popd
