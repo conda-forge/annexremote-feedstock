@@ -9,6 +9,8 @@ package:
 source:
   url: https://github.com/Lykos153/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - 0001-added-listconfigs.patch
 
 build:
   skip: True  # [not linux]
