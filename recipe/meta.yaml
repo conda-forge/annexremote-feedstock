@@ -35,7 +35,7 @@ test:
 
 about:
   home: https://github.com/Lykos153/AnnexRemote
-  license: GNU General Public v3 (GPLv3)
+  license: GPL-3.0-only
   license_family: GPL3
   license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
   summary: Python library for implementing git-annex external special remotes
