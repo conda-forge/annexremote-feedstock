@@ -14,7 +14,7 @@ source:
 
 build:
   skip: True  # [not linux]
-  number: 1
+  number: 2
 
 requirements:
   host:
@@ -32,6 +32,7 @@ test:
   requires:
     - nose
     - mock
+    - git
     - git-annex
     - gnupg
 
