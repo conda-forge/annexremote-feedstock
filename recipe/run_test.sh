@@ -3,7 +3,7 @@
 set -eu -o pipefail -x
 
 nosetests --verbose
-python -c "from annexremote import Master, SpecialRemote, RemoteError"
+python -c "from annexremote import Master, SpecialRemote, RemoteError" 2>&1 | tail -n 1000
 
 chmod u+x examples/git-annex-remote-directory
 
