@@ -1,20 +1,20 @@
 {% set name = "AnnexRemote" %}
-{% set version = "1.4.3" %}
-{% set sha256 = "ffac51c472c0b51c5114cebb17cbb614cdb8118edd334d87061fa81171af5304" %}
+{% set version = "1.5.0" %}
+{% set sha256 = "92f32b6f5461cbaeefe0c60b32f9c1e0c1dbe4e57b8ee425affb56f4060f64ef" %}
 
 package:
   name: "{{ name|lower }}"
   version: "{{ version }}"
 
 source:
-  url: https://github.com/Lykos153/{{ name }}/archive/v{{ version }}.tar.gz
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
   sha256: {{ sha256 }}
   patches:
     - 0001-added-listconfigs.patch
 
 build:
   skip: True  # [not linux]
-  number: 4
+  number: 0
 
 requirements:
   host:
@@ -26,6 +26,8 @@ requirements:
     - future
 
 test:
+  imports:
+    - annexremote
   source_files:
     - tests/
     - examples/
