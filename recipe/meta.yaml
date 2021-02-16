@@ -1,13 +1,13 @@
 {% set name = "AnnexRemote" %}
 {% set version = "1.5.0" %}
-{% set sha256 = "92f32b6f5461cbaeefe0c60b32f9c1e0c1dbe4e57b8ee425affb56f4060f64ef" %}
+{% set sha256 = "81046f80217f70c2f1f49e0af1d7da9b414cc9c047b6e2c41deac7118fcaa601" %}
 
 package:
   name: "{{ name|lower }}"
   version: "{{ version }}"
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  url: https://github.com/Lykos153/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: {{ sha256 }}
   patches:
     - 0001-added-listconfigs.patch
