@@ -1,10 +1,10 @@
 {% set name = "AnnexRemote" %}
-{% set version = "1.5.0" %}
-{% set sha256 = "81046f80217f70c2f1f49e0af1d7da9b414cc9c047b6e2c41deac7118fcaa601" %}
+{% set version = "1.6.0" %}
+{% set sha256 = "bb43a93b00c1f392f5ac3b5e3e3fb785b7b3db21ce694980d326f97076478f67" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://github.com/Lykos153/{{ name }}/archive/v{{ version }}.tar.gz
@@ -13,7 +13,7 @@ source:
     - 0001-added-listconfigs.patch
 
 build:
-  skip: True  # [not linux]
+  skip: true  # [not linux]
   number: 0
 
 requirements:
@@ -42,7 +42,7 @@ about:
   home: https://github.com/Lykos153/AnnexRemote
   license: GPL-3.0-only
   license_family: GPL3
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
+  license_file: {{ environ["RECIPE_DIR"] }}/LICENSE
   summary: Python library for implementing git-annex external special remotes
   dev_url: https://github.com/Lykos153/AnnexRemote
 
