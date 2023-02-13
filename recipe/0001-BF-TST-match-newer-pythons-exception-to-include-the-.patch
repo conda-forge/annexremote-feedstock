@@ -1,0 +1,42 @@
+From 3ede6e0478f7a6bf80a453d6f907e94e21c9af4c Mon Sep 17 00:00:00 2001
+From: Yaroslav Halchenko <debian@onerussian.com>
+Date: Mon, 13 Feb 2023 13:13:31 -0500
+Subject: [PATCH] BF(TST): match newer pythons exception to include the class
+ name when stating which method signature is not met
+
+Closes #61
+---
+ tests/test_GitAnnexRequestMessages.py | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/tests/test_GitAnnexRequestMessages.py b/tests/test_GitAnnexRequestMessages.py
+index 93efb5f..ee40089 100644
+--- a/tests/test_GitAnnexRequestMessages.py
++++ b/tests/test_GitAnnexRequestMessages.py
+@@ -382,9 +382,9 @@ class TestGitAnnexRequestMessagesExporttree(utils.GitAnnexTestCase):
+     def TestExport_MissingName(self):
+         with self.assertRaises(SystemExit):
+             self.annex.Listen(io.StringIO("EXPORT"))
+-        self.assertEqual(
++        self.assertRegex(
+             utils.last_buffer_line(self.output),
+-            "ERROR do_EXPORT() missing 1 required positional argument: 'name'",
++            "ERROR (Protocol\.|)do_EXPORT\(\) missing 1 required positional argument: 'name'",
+         )
+ 
+     def TestExport_SpaceInName(self):
+@@ -560,9 +560,9 @@ class TestGitAnnexRequestMessagesExporttree(utils.GitAnnexTestCase):
+     def TestRemoveexportdirectory_MissingDirectory(self):
+         with self.assertRaises(SystemExit):
+             self.annex.Listen(io.StringIO("REMOVEEXPORTDIRECTORY"))
+-        self.assertEqual(
++        self.assertRegex(
+             utils.last_buffer_line(self.output),
+-            "ERROR do_REMOVEEXPORTDIRECTORY() missing 1 required positional argument: 'name'",
++            "ERROR (Protocol\.|)do_REMOVEEXPORTDIRECTORY\(\) missing 1 required positional argument: 'name'",
+         )
+ 
+     def TestRemoveexportdirectory_SpaceInFilename(self):
+-- 
+2.39.1
+
