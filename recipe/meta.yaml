@@ -11,10 +11,11 @@ source:
   sha256: {{ sha256 }}
   patches:
     - 0001-added-listconfigs.patch
+    - 0001-BF-TST-match-newer-pythons-exception-to-include-the-.patch
 
 build:
   skip: True  # [not linux]
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -49,3 +50,4 @@ about:
 extra:
   recipe-maintainers:
     - notestaff
+    - yarikoptic
