@@ -1,11 +1,11 @@
-About annexremote
-=================
+About annexremote-feedstock
+===========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/annexremote-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/Lykos153/AnnexRemote
 
 Package license: GPL-3.0-only
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/annexremote-feedstock/blob/main/LICENSE.txt)
 
 Summary: Python library for implementing git-annex external special remotes
 
