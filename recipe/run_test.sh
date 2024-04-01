@@ -2,9 +2,12 @@
 
 set -eu -o pipefail -x
 
-nosetests --verbose
+python -m pytest -s -v tests
 python -c "from annexremote import Master, SpecialRemote, RemoteError"
 
+# With coming release, just do
+# ./examples/test_git-annex-remote-directory
+# and remove all below
 chmod u+x examples/git-annex-remote-directory
 
 CURDIR=$(pwd)
