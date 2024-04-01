@@ -1,13 +1,13 @@
-{% set name = "AnnexRemote" %}
+{% set name = "annexremote" %}
 {% set version = "1.6.4" %}
-{% set sha256 = "49df07491b119da0dd9d3890ac9f1aac232f04a1f36195cd0527da100edd9a5a" %}
+{% set sha256 = "da4198a25b36c699216fd5f1e93ba0e655e167b6822b64284a4bf90388ea69ae" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/Lykos153/{{ name }}/archive/v{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
