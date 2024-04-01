@@ -1,6 +1,6 @@
 {% set name = "AnnexRemote" %}
-{% set version = "1.6.0" %}
-{% set sha256 = "1caf0384b5291b82ec88f197017d6178a754bfcc60a73a09256cdeaf3be29316" %}
+{% set version = "1.6.4" %}
+{% set sha256 = "49df07491b119da0dd9d3890ac9f1aac232f04a1f36195cd0527da100edd9a5a" %}
 
 package:
   name: {{ name|lower }}
@@ -15,7 +15,7 @@ source:
 
 build:
   skip: true  # [not linux]
-  number: 1
+  number: 0
 
 requirements:
   build:
