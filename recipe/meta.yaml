@@ -1,21 +1,20 @@
-{% set name = "AnnexRemote" %}
-{% set version = "1.6.0" %}
-{% set sha256 = "1caf0384b5291b82ec88f197017d6178a754bfcc60a73a09256cdeaf3be29316" %}
+{% set name = "annexremote" %}
+{% set version = "1.6.4" %}
+{% set sha256 = "da4198a25b36c699216fd5f1e93ba0e655e167b6822b64284a4bf90388ea69ae" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/Lykos153/{{ name }}/archive/v{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
   patches:
-    - 0001-added-listconfigs.patch
-    - 0001-BF-TST-match-newer-pythons-exception-to-include-the-.patch
+    - 0001-Add-listconfigs-to-the-example-git-annex-remote-dire.patch
 
 build:
   skip: true  # [not linux]
-  number: 1
+  number: 0
 
 requirements:
   build:
@@ -24,10 +23,8 @@ requirements:
   host:
     - pip
     - python
-    - future
   run:
     - python
-    - future
 
 test:
   imports:
@@ -36,8 +33,7 @@ test:
     - tests/
     - examples/
   requires:
-    - nose
-    - mock
+    - pytest
     - git
     - git-annex
     - gnupg
@@ -54,3 +50,4 @@ extra:
   recipe-maintainers:
     - notestaff
     - yarikoptic
+    - jwodder
