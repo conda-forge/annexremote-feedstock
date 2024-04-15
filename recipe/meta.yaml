@@ -1,6 +1,6 @@
 {% set name = "annexremote" %}
-{% set version = "1.6.4" %}
-{% set sha256 = "da4198a25b36c699216fd5f1e93ba0e655e167b6822b64284a4bf90388ea69ae" %}
+{% set version = "1.6.5" %}
+{% set sha256 = "ad0ccdd84a8771ad58922d172ee68b225ece77bf464abe4d24ff91a4896a423e" %}
 
 package:
   name: {{ name|lower }}
@@ -9,12 +9,10 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
-  patches:
-    - 0001-Add-listconfigs-to-the-example-git-annex-remote-dire.patch
 
 build:
   skip: true  # [not linux]
-  number: 1
+  number: 0
 
 requirements:
   build:
