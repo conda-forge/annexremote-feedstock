@@ -1,6 +1,6 @@
 {% set name = "annexremote" %}
-{% set version = "1.6.5" %}
-{% set sha256 = "ad0ccdd84a8771ad58922d172ee68b225ece77bf464abe4d24ff91a4896a423e" %}
+{% set version = "1.6.6" %}
+{% set sha256 = "5f78d0753c0763d95fc4c52050bd6212bb32457d32f6575dc66a83178e0283a7" %}
 
 package:
   name: {{ name|lower }}
