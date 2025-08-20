@@ -185,7 +185,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@jwodder](https://github.com/jwodder/)
 * [@notestaff](https://github.com/notestaff/)
 * [@yarikoptic](https://github.com/yarikoptic/)
 
