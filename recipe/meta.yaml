@@ -12,7 +12,7 @@ source:
 
 build:
   skip: true  # [not linux]
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -48,4 +48,3 @@ extra:
   recipe-maintainers:
     - notestaff
     - yarikoptic
-    - jwodder
