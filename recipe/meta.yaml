@@ -17,10 +17,10 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
     - setuptools
   run:
-    - python >=3.7
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -29,6 +29,7 @@ test:
     - tests/
     - examples/
   requires:
+    - python {{ python_min }}
     - pytest
     - git
     - git-annex
