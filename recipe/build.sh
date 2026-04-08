@@ -2,6 +2,5 @@
 
 set -eu -o pipefail -x
 
-mkdir -p $PREFIX/bin
-$PYTHON -m pip install . --no-deps --ignore-installed -vv
+$PYTHON -m pip install . --no-deps --no-build-isolation -vv
 
