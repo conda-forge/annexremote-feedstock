@@ -11,19 +11,16 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  skip: true  # [not linux]
-  number: 2
+  noarch: python
+  number: 3
 
 requirements:
-  build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
     - pip
-    - python
+    - python {{ python_min }}
     - setuptools
   run:
-    - python
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -32,6 +29,7 @@ test:
     - tests/
     - examples/
   requires:
+    - python {{ python_min }}
     - pytest
     - git
     - git-annex
